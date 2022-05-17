@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Admin
+{% endblock %}
+
+{% block main %}<form action="/admin" method="post">
+    
+<div class="container"> 
+    <div class="row"> 
+          <div class = 'col-sm-12 col-md-4 col-lg-1'></div>
+          <div class = 'col-sm-12 col-md-4 col-lg-10'></div>
+            
+
+
+          <div class="accordion" id="accordionExample" style = "font-family: 'Laila', sans-serif;">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <i class="fa-solid fa-users"></i> &nbsp; Users
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <table class="table">
+                    <thead class="table-dark">
+                      <th>S/N</th>
+                      <th>Name</th>
+                      <th>User type</th>
+                      <th>User status</th>
+                      <th>User Employment Status</th>
+                      <th>Edit user status</th>
+                      <th>Edit user employment status</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          {%for i in range (users)%}
+                          
+                            <td>{{arr_final[i][0]}}</td>
+                            <td>{{arr_final[i][1]}}</td>
+                            <td>{{arr_final[i][2]}}</td> 
+                            <td>{{arr_final[i][3]}}</td>
+                            <td>{{arr_final[i][4]}}</td>
+                            <td class = 'text-center'>
+                                <form action="/admin" method="post">
+                                  <input type="text" value={{all_users[i]["id"]}} placeholder ="id" name='id' hidden>
+                                    <select name = 'nrm_stat' >
+                                      <option name = 'nrm_stat' selected>Select action</option>
+                                      <option name = 'nrm_stat' value="active">active</option>
+                                      <option name = 'nrm_stat' value="inactive">inactive</option>
+                                      <option name = 'nrm_stat' value="banned">banned</option>
+                                    </select>
+                                    <button type = 'submit' class = 'btn btn-primary'><i class="fa-solid fa-pen-to-square"></i></button>
+                                </form>
+                            </td>
+                            <td class = 'text-center'>
+                                <form action="/admin" method="post">
+                                  <input type="text" value={{all_users[i]["id"]}} placeholder = 'id' name="id2" hidden>
+                                  <select name ="emp_stat">
+                                    <option name ="emp_stat" selected>Select action</option>
+                                    <option name ="emp_stat" value="engaged">engaged</option>
+                                    <option name ="emp_stat" value="awaiting">awaiting</option>
+                                    <option name ="emp_stat" value="unengaged">unengaged</option>
+                                  </select>
+                                  <button type = 'submit' class = 'btn btn-primary'><i class="fa-solid fa-pen-to-square"></i></button>
+                              </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <i class="fa-solid fa-chart-line"></i> &nbsp; User Statistics
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                      <table>
+                        <tbody>
+                              <tr>
+                                <td>Total &#x2116; of users:</td>
+                                <td style = 'font-weight: bold; text-align: right;'>&emsp;{{users}}</td>
+                              </tr>
+                              <tr>
+                                <td>Total &#x2116; of companies:</td>
+                                <td style = 'font-weight: bold; text-align: right;'>&emsp;{{companies}}</td>
+                              </tr>
+                              <tr>
+                                <td>Total &#x2116; of software engineers:</td>
+                                <td style = 'font-weight: bold; text-align: right;'>&emsp;{{engineers}}</td>
+                              </tr>
+                              <tr>
+                                <td>Total &#x2116; of engaged software engineers:</td>
+                                <td style = 'font-weight: bold; text-align: right;'>&emsp;{{engaged}}</td>
+                              </tr>
+                              <tr>
+                                <td>Total &#x2116; of unengaged software engineers:</td>
+                                <td style = 'font-weight: bold; text-align: right;'>&emsp;{{unengaged}}</td>
+                              </tr>
+                                
+                        </tbody>
+                      </table>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+
+          
+
+
+
+
+          <div class = 'col-sm-12 col-md-4 col-lg-1'></div>
+    </div>
+</div>
+<br><br>
+</form>
+{% endblock %}

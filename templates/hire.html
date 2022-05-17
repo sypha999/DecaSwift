@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Hire
+{% endblock %}
+
+{% block main %}
+    
+
+<br><br>   <form action="/hire" method="post">
+<div class="container"> 
+          <div class="row"> 
+                <div class = 'col-sm-12 col-md-4 col-lg-3'></div>
+                <div class = 'col-sm-12 col-md-4 col-lg-6'>
+                    
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user-large"></i></span>
+                          <input type="number" name="number" class="form-control" placeholder="No. of software engineers to hire" aria-label="Username" aria-describedby="basic-addon1" required>
+                        </div>
+                        <div class="input-group mb-3">
+                          <label class="input-group-text" name="number" for="inputGroupSelect01"><i class="fa-solid fa-code"></i></label>
+                          <select class="form-select" id="inputGroupSelect01" name ="stack">
+                            <option name="stack" selected>Stack request</option>
+                            <option name="stack" value="C#">C#</option>
+                            <option name="stack" value="Java">Java</option>
+                            <option name="stack" value="Node">Node</option>
+                          </select>
+                        </div>
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" name="date" id="basic-addon1"><i class="fa-solid fa-calendar-day"></i></span>
+                            <input class = 'form-control' type="text" placeholder="Deadline"
+                            onfocus="(this.type='date')"
+                            onblur="(this.type='text')" name="date">
+                        </div>
+                        
+                        <div class="form-floating mb-3">
+                          <textarea id = 'devPhone' name="criteria" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" oninput = 'activate()' required></textarea>
+                          <label for="floatingTextarea2" name="criteria">Hiring criteria</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                  
+                </div>
+                <div class = 'col-sm-12 col-md-4 col-lg-3'></div>
+          </div>
+</div>
+
+<script>
+
+  
+</script>
+</form>
+<br><br>
+
+{% endblock %}

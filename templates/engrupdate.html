@@ -1,0 +1,65 @@
+{% extends "layout.html" %} 
+{% block title %}
+
+Profile Update
+{% endblock %} 
+
+{% block main %}
+
+
+<br>
+<form action="/engrupdate" method="post">
+<div class="container rounded bg-white mt-5 mb-5" style = 'margin-left: 20%; width: 60%;'>
+    
+       
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Profile Settings</h4>
+                </div>
+                <p>Only JPEG and PNG formats are accepted</p>
+                <p>Upload your Image</p>
+                <div class="mb-3">
+                
+                  <input class="form-control" name="photo" type="file" id="formFile">
+                </div>
+                <div class="row mt-3">
+                    
+                  <div class="col-md-12 mb-3">
+                    <input class = 'form-control' name="date" type="text" placeholder={{old_date}}
+                          onfocus="(this.type='date')"
+                          onblur="(this.type='text')">
+                                          
+                    </div>
+                    <div class="col-md-12 mb-3"><input type="text" name="email" class="form-control" placeholder={{old_email}}></div>
+                  
+              </div>
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                            <select class="form-select" name="stack" aria-label="Default select example">
+                              <option name="stack" selected>{{old_stack}}</option>
+                              <option name="stack" value="C#">C#</option>
+                              <option name="stack" value="Java">Java</option>
+                              <option name="stack" value="Node">Node</option>
+                            </select>
+                    </div>
+                    <div class="col-md-12 mb-3"><input type="text" name="gitlink" class="form-control" placeholder={{old_gitlink}} value=""></div>
+                    <div class="col-md-12 mb-3"><input type="text" name="phone" class="form-control" placeholder={{old_phone}} value=""></div>
+                    
+                    <div class="form-floating">
+                      <textarea id = 'devPhone'name="description" class="form-control" placeholder={{old_desc}} id="floatingTextarea2" style="height: 100px"></textarea>
+                      <label for="floatingTextarea2"> {{old_desc}}</label>
+                    </div>
+                </div>
+                
+                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button></div>
+            </div>
+        
+        
+    </div>
+  </form>
+
+<br> <br><br>
+
+
+
+{% endblock %}

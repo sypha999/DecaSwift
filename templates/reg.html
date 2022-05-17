@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+<br>
+<br>
+    <form action="/reg" method="post">
+        
+        <div class="container"> 
+            <div class="row"> 
+                  <div class = 'col-sm-12 col-md-4 col-lg-3'></div>
+                  <div class = 'col-sm-12 col-md-4 col-lg-6'>
+                      <form action="">
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user-large"></i></span>
+                            <input type="text" id="name" class="form-control" placeholder="name" aria-label="Username" aria-describedby="basic-addon1" required name = 'name' oninput = 'enable()'>
+                          </div>
+                          <div class="input-group mb-3">
+                            <label class="input-group-text" for="inputGroupSelect01"><i class="fa-solid fa-user-group"></i></label>
+                            <select class="form-select"  name = 'type' id = 'select' onchange = 'enable()'>
+                              <option value = '' >client type</option>
+                              <option id="type" value="engineer">Software Engineer</option>
+                              <option id="type" value="company">Company</option>
+                            </select>
+                          </div>
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-envelope"></i></span>
+                            <input type="text" id="email" class="form-control" placeholder="email" aria-label="Username" aria-describedby="basic-addon1" name = 'email' required oninput = 'enable()'>
+                          </div>
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
+                            <input type="password" id="password" class="form-control" placeholder="password" aria-label="Username" aria-describedby="basic-addon1" name = 'password' required oninput = 'enable()'>
+                          </div>
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
+                            <input type="password" id="confirmation" class="form-control" placeholder="confirm password" aria-label="Username" aria-describedby="basic-addon1" name = 'confirmation' required oninput = 'enable()'>
+                          </div>
+                          <button id = 'sub' type="submit" class="btn btn-primary" disabled>Submit</button>
+                      </form>
+                  </div>
+                  <div class = 'col-sm-12 col-md-4 col-lg-3'></div>
+            </div>
+  </div>
+<br><br>
+    </form>
+    <script>
+          let enable = function(){
+            let name = document.getElementById('name').value.length;
+            let email = document.getElementById('email').value.length;
+            let password = document.getElementById('password').value.length;
+            let confirmation = document.getElementById('confirmation').value.length;
+            let select = document.getElementById("select").value.length;
+
+            if(name > 0 && email > 0 && password > 0 && confirmation > 0 && select > 0){
+                document.getElementById("sub").disabled = false;
+            }else{
+              document.getElementById("sub").disabled = true;
+            }
+
+            
+          }
+    </script>
+{% endblock %}

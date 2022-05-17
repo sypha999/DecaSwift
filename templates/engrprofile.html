@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+    
+<br><br>
+<div class="container"> 
+          <div class="row mb-3"> 
+               <div class="col-sm-6 col-md-10 col-lg-10"></div>
+               <div class="col-sm-6 col-md-2 col-lg-2">
+                   <a href="/engrupdate">
+                      <button class = 'btn btn-primary'><i class="fa-solid fa-id-card"></i> Edit profile</button></a>
+                    </form>
+               </div>
+          </div>
+          <div class="row" style = "font-family: laila;"> 
+              <div class="col-sm-12 col-md-1 col-lg-2"></div>
+              <div class="col-sm-12 col-md-4 col-lg-4 py-0 px-0 mx-0 my-0" style = 'background:#ffffff; background-size: cover; height: 50vh;'> 
+                    <img src = "ceo.jpg" height = "100%" width = "100%">
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-4" style = 'background: #ffffff; height: 50vh; font-size: 1vw;'> 
+                      <h4 class = "mt-3 text-center">{{name}}</h4>
+                      <p class = "text-center">{{old_stack}} <span>Software Engineer</span></p>
+                      <p class = "text-justify" style = 'text-align: justify;'> 
+                        {{old_desc}}
+                      </p>
+                      <span><i class="fa-solid fa-square-phone fa-2x"></i>
+                        <a href="tel:{{old_phone}}">{{old_phone}}</a>
+                      </span> <br>
+                      <span><i class="fa-solid fa-envelope fa-2x"></i>
+                        <a href="mailto:{{old_email}}">{{old_email}}</a>
+                      </span> <br>
+                      <span><i class="fa-brands fa-github-square fa-2x"></i>
+                        <a href = "{{old_gitlink}}">{{old_gitlink}}</a>
+                      </span>
+              </div>
+              <div class="col-sm-12 col-md-1 col-lg-2"></div>
+          </div>
+</div>
+<br><br>
+
+{% endblock %}

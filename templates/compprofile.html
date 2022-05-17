@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+
+<br><br>
+                <div class="container"> 
+                          <div class="row mb-3"> 
+                               <div class="col-sm-6 col-md-10 col-lg-10"></div>
+                               <div class="col-sm-6 col-md-2 col-lg-2">
+                                    
+                                      <a href="/compupdate">
+                                      <button class = 'btn btn-primary'><i class="fa-solid fa-id-card"></i> Edit profile</button></a>
+                                    
+                               </div>
+                          </div>
+                          <div class="row" style = "font-family: laila;"> 
+                              <div class="col-sm-12 col-md-1 col-lg-2"></div>
+                              
+                              <div class="col-sm-12 col-md-4 col-lg-8" > 
+                                     <div class = "px-3 py-3 mb-3" style = 'background: whitesmoke; height: 50vh; font-size: 1vw;'> 
+                                          <h4 class = "mt-3 text-center">{{name}}</h4>
+                                          
+                                          <p class = "text-justify" style = 'text-align: justify;'> 
+                                            {{old_desc}}
+                                          </p>
+                                          <span><i class="fa-solid fa-square-phone fa-2x"></i>
+                                            <a href="tel:{{old_phone}}">{{old_phone}}</a>
+                                          </span> <br>
+                                          <span><i class="fa-solid fa-envelope fa-2x"></i>
+                                            <a href="mailto:{{old_email}}">{{old_email}}</a>
+                                          </span> <br>
+                                          <span><i class="fa-solid fa-globe fa-2x"></i>
+                                            <a href = "{{old_website}}">{{old_website}}</a>
+                                          </span>
+                                     </div>
+                                      <div> 
+                                          
+                                                  <a href="/hire">
+                                                  <button class = 'btn btn-primary' ><i class="fa-solid fa-users-rectangle fa-2x">Hire Software Engineers</button></a>
+                                          
+                                      </div>
+                              </div>
+                                
+                              <div class="col-sm-12 col-md-1 col-lg-2"></div>
+                          </div>
+                </div>
+      <br><br>
+
+{% endblock %}
+

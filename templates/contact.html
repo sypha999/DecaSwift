@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Contact
+{% endblock %}
+
+{% block main %}
+
+   <!-- content begins here -->
+   <br><br>
+   <form action="/contact" method="post">
+   <div class="container"> 
+    <div class="row"> 
+          <div class = 'col-sm-12 col-md-4 col-lg-3'></div>
+          <div class = 'col-sm-12 col-md-4 col-lg-6'>
+              <form action="">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user-large"></i></span>
+                    <input type="text" class="form-control" name = 'name' placeholder="name" aria-label="Username" aria-describedby="basic-addon1" required >
+                  </div>
+                 
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="text" class="form-control" placeholder="email" aria-label="Username" aria-describedby="basic-addon1" name = 'email' required>
+                  </div>
+                  <div class="form-floating">
+                    <textarea id = 'devPhone' name="comment" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" oninput = 'activate()' required></textarea>
+                    <label for="floatingTextarea2">Comments</label>
+                  </div>
+                  <br>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+          </div>
+          <div class = 'col-sm-12 col-md-4 col-lg-3'></div>
+    </div>
+</div>
+</form>
+<!-- content ends here -->
+<br><br>
+
+{% endblock %}
